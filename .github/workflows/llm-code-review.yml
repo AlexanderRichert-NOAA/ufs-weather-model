@@ -31,6 +31,6 @@ jobs:
     - name: "Code review"
       uses: NOAA-EMC/ci-llm-code-review@develop
       with:
-        api-key-variable: GEMINI_API_KEY
-        backend: gemini-2.0
+        api-key-variable: MISTRAL_API_KEY
+        backend: mistral
         reference-owner: ufs-community
