@@ -1,6 +1,6 @@
 spack:
   include:
-  # Set $SITE, $COMPILER, and optionally $USE_SPACK_STACK_VERSIONS=YES
+  # Set $SITE, $COMPILER, and optionally $USE_SPACK_STACK_VERSIONS=YES and $USE_SPACK_STACK_CONFIG=YES
   - path: https://raw.githubusercontent.com/AlexanderRichert-NOAA/spack-config-test/fb44e1e4bdd4d3ed831e92966adedaabb1b20172/common.yaml
     sha256: af1f76038c38cddd667191f5aa311feac2517500d5e9e62d19773b1aa1441b46
   specs:
@@ -18,9 +18,6 @@ spack:
   definitions:
   - model: [ufs-weather-model@develop]
     when: env.get("BUILD_MODEL") == "YES"
-  view: true
-  concretizer:
-    unify: true
   repos:
     modelpackages: model-packages
     builtin:
@@ -31,3 +28,6 @@ spack:
     ufs-weather-model:
       spec: ufs-weather-model@=develop
       path: ..
+  view: true
+  concretizer:
+    unify: true
