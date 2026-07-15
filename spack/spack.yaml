@@ -22,8 +22,7 @@ spack:
     modelpackages: model-packages
     builtin:
       destination: spack-packages
-      git: https://github.com/JCSDA/spack-packages/
-      commit: 8d838e853f2044af0dddee40e4dbcb44a475a23d
+      commit: 18aeef72a6e4159fb126af7c6e1c5151000d1442
   develop:
     ufs-weather-model:
       spec: ufs-weather-model@=develop
