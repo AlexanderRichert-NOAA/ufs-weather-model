@@ -17,7 +17,7 @@ spack:
   - libpng@1.6.37
   - mapl@2.53.4 ~f2py
   - netcdf-c@4.9.2 +mpi ~parallel-netcdf ~szip build_system=autotools
-  - netcdf-fortran@4.6.1 +mpi
+  - netcdf-fortran@4.6.1
   - parallelio@2.6.2 +pnetcdf
   - scotch@7.0.4 +mpi +metis ~shared ~threads ~mpi_thread +noarch +esmumps
   - sp@2.5.0 precision=d
