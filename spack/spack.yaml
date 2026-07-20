@@ -4,16 +4,24 @@ spack:
   - path: https://raw.githubusercontent.com/AlexanderRichert-NOAA/spack-config-test/fb44e1e4bdd4d3ed831e92966adedaabb1b20172/common.yaml
     sha256: af1f76038c38cddd667191f5aa311feac2517500d5e9e62d19773b1aa1441b46
   specs:
-  - netcdf-c
-  - netcdf-fortran
-  - bacio
-  - w3emc
-  - ip
-  - crtm
-  - mapl
-  - esmf
-  - fms
-  - parallelio
+  - bacio@2.4.1
+  - crtm@2.4.0.1
+  - esmf@8.8.0 ~xerces ~pnetcdf +shared +external-parallelio
+  - fms@2024.02 precision=32,64 +quad_precision +gfs_phys +openmp +pic constants=GFS build_type=Release +deprecated_io
+  - g2@3.5.1
+  - g2tmpl@1.13.0
+  - gftl-shared@1.9.0
+  - hdf5@1.14.3 +hl +fortran +mpi +threadsafe ~szip
+  - ip@5.1.0
+  - jasper@2.0.32
+  - libpng@1.6.37
+  - mapl@2.53.4 ~f2py
+  - netcdf-c@4.9.2 +mpi ~parallel-netcdf ~szip build_system=autotools
+  - netcdf-fortran@4.6.1 +mpi
+  - parallelio@2.6.2 +pnetcdf
+  - scotch@7.0.4 +mpi +metis ~shared ~threads ~mpi_thread +noarch +esmumps
+  - sp@2.5.0 precision=d
+  - w3emc@2.10.0 precision=4,d
   - $model
   definitions:
   - model: [ufs-weather-model@develop]
