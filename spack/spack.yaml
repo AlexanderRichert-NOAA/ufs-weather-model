@@ -5,26 +5,25 @@ spack:
   - path: https://raw.githubusercontent.com/AlexanderRichert-NOAA/spack-config-test/fb44e1e4bdd4d3ed831e92966adedaabb1b20172/common.yaml
     sha256: af1f76038c38cddd667191f5aa311feac2517500d5e9e62d19773b1aa1441b46
   specs:
-  - gmake
-#  - bacio@2.4.1
-#  - crtm@2.4.0.1
-#  - esmf@8.8.0 ~xerces ~pnetcdf +shared +external-parallelio
-#  - fms@2024.02 precision=32,64 +quad_precision +gfs_phys +openmp +pic constants=GFS build_type=Release +deprecated_io
-#  - g2@3.5.1
-#  - g2tmpl@1.13.0
-#  - gftl-shared@1.9.0
-#  - hdf5@1.14.3 +hl +fortran +mpi +threadsafe ~szip
-#  - ip@5.1.0
-#  - jasper@2.0.32
-#  - libpng@1.6.37
-#  - mapl@2.53.4 ~f2py
-#  - netcdf-c@4.9.2 +mpi ~parallel-netcdf ~szip build_system=autotools
-#  - netcdf-fortran@4.6.1
-#  - parallelio@2.6.2 +pnetcdf
-#  - scotch@7.0.4 +mpi +metis ~shared ~threads ~mpi_thread +noarch +esmumps
-#  - sp@2.5.0 precision=d
-#  - w3emc@2.10.0 precision=4,d
-#  - $model
+  - bacio@2.4.1
+  - crtm@2.4.0.1
+  - esmf@8.8.0 ~xerces ~pnetcdf +shared +external-parallelio
+  - fms@2024.02 precision=32,64 +quad_precision +gfs_phys +openmp +pic constants=GFS build_type=Release +deprecated_io
+  - g2@3.5.1
+  - g2tmpl@1.13.0
+  - gftl-shared@1.9.0
+  - hdf5@1.14.3 +hl +fortran +mpi +threadsafe ~szip
+  - ip@5.1.0
+  - jasper@2.0.32
+  - libpng@1.6.37
+  - mapl@2.53.4 ~f2py
+  - netcdf-c@4.9.2 +mpi ~parallel-netcdf ~szip build_system=autotools
+  - netcdf-fortran@4.6.1
+  - parallelio@2.6.2 +pnetcdf
+  - scotch@7.0.4 +mpi +metis ~shared ~threads ~mpi_thread +noarch +esmumps
+  - sp@2.5.0 precision=d
+  - w3emc@2.10.0 precision=4,d
+  - $model
   definitions:
   - model: [ufs-weather-model@develop]
     when: env.get("BUILD_MODEL") == "YES"
@@ -40,42 +39,3 @@ spack:
   view: true
   concretizer:
     unify: true
-  packages:
-    llvm:
-      externals:
-      - spec: llvm@17.0.6+clang~flang~lld~lldb
-        prefix: /usr
-        extra_attributes:
-          compilers:
-            c: /usr/bin/clang-17
-            cxx: /usr/bin/clang++-17
-    gcc:
-      externals:
-      - spec: gcc@11.5.0 languages:='c,c++,fortran'
-        prefix: /usr
-        extra_attributes:
-          compilers:
-            c: /usr/bin/gcc-11
-            cxx: /usr/bin/g++-11
-            fortran: /usr/bin/gfortran-11
-      - spec: gcc@12.4.0 languages:='c,c++,fortran'
-        prefix: /usr
-        extra_attributes:
-          compilers:
-            c: /usr/bin/gcc-12
-            cxx: /usr/bin/g++-12
-            fortran: /usr/bin/gfortran-12
-      - spec: gcc@13.3.0 languages:='c,c++,fortran'
-        prefix: /usr
-        extra_attributes:
-          compilers:
-            c: /usr/bin/gcc
-            cxx: /usr/bin/g++
-            fortran: /usr/bin/gfortran
-      - spec: gcc@14.2.0 languages:='c,c++,fortran'
-        prefix: /usr
-        extra_attributes:
-          compilers:
-            c: /usr/bin/gcc-14
-            cxx: /usr/bin/g++-14
-            fortran: /usr/bin/gfortran-14
