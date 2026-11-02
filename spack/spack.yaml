@@ -2,22 +2,24 @@
 spack:
   include:
   # Set $SITE, $COMPILER, and optionally $USE_SPACK_STACK_VERSIONS=YES and $USE_SPACK_STACK_CONFIG=YES
-  - path: https://raw.githubusercontent.com/AlexanderRichert-NOAA/spack-config-test/ba952856c42dab5befd7c0df2ea156258d4411d6/common.yaml
-    sha256: 50eddffa2ffbc77a3029975ff1b516b0c84e4788e19802afdd27b0edd5c0bf97
+  - path: https://raw.githubusercontent.com/AlexanderRichert-NOAA/spack-config-test/4be2d5b0d2fe09050e3216822cb44026a242f197/common.yaml
+    sha256: 09dab9ef2c12138a7db9ce6e885f63711e5bce429b4d4b7037bfb08c73945fe4
   specs:
   - bacio@2.4.1
-  - crtm@2.4.0.1
+  - cmake
+  - crtm
   - esmf@8.8.0 ~xerces ~pnetcdf +shared +external-parallelio
   - fms@2024.02 precision=32,64 +quad_precision +gfs_phys +openmp +pic constants=GFS build_type=Release +deprecated_io
   - g2@3.5.1
   - g2tmpl@1.13.0
   - gftl-shared@1.9.0
+  - gmake
   - hdf5@1.14.3 +hl +fortran +mpi +threadsafe ~szip
   - ip@5.1.0
   - jasper@2.0.32
   - libpng@1.6.37
   - mapl@2.53.4 ~f2py
-  - netcdf-c@4.9.2 +mpi ~parallel-netcdf ~szip build_system=autotools
+  - netcdf-c@4.9.2 +mpi ~parallel-netcdf ~szip build_system=cmake
   - netcdf-fortran@4.6.1
   - parallelio@2.6.2 +pnetcdf
   - scotch@7.0.4 +mpi +metis ~shared ~threads ~mpi_thread +noarch +esmumps
